@@ -1,15 +1,16 @@
 
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import Sidebar from './components/Sidebar';
-import Introduction from './sections/Introduction';
-import History from './sections/History';
-import Basics from './sections/Basics';
-import Vocabulary from './sections/Vocabulary';
-import Grammar from './sections/Grammar';
-import Conversations from './sections/Conversations';
-import Practice from './sections/Practice';
 import { Section } from './types';
 import { motion, AnimatePresence } from 'framer-motion';
+
+const Introduction = lazy(() => import('./sections/Introduction'));
+const History = lazy(() => import('./sections/History'));
+const Basics = lazy(() => import('./sections/Basics'));
+const Vocabulary = lazy(() => import('./sections/Vocabulary'));
+const Grammar = lazy(() => import('./sections/Grammar'));
+const Conversations = lazy(() => import('./sections/Conversations'));
+const Practice = lazy(() => import('./sections/Practice'));
 
 const sectionComponents: Record<Section, React.ComponentType> = {
   [Section.INTRODUCTION]: Introduction,
@@ -39,7 +40,9 @@ const App: React.FC = () => {
             transition={{ duration: 0.3 }}
             className="h-full"
           >
-            <CurrentSection />
+            <Suspense fallback={<div>Loading section...</div>}>
+              <CurrentSection />
+            </Suspense>
           </motion.div>
         </AnimatePresence>
       </main>
