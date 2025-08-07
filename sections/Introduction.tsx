@@ -20,11 +20,11 @@ const itemVariants = {
 };
 
 const images = [
-    '/images/gu1.jpg',
-    '/images/gu2.jpg',
-    '/images/gu3.jpg',
-    '/images/gu4.jpg',
-    '/images/gu5.jpg'
+    'images/gu1.jpg',
+    'images/gu2.jpg',
+    'images/gu3.jpg',
+    'images/gu4.jpg',
+    'images/gu5.jpg'
 ];
 
 
