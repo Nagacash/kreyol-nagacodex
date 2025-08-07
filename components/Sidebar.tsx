@@ -32,7 +32,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
   return (
     <aside className="hidden md:flex flex-col w-64 bg-zinc-900 border-r border-border p-4 text-foreground">
       <div className="flex items-center gap-3 mb-8">
-        <img src="/logo.png" alt="Kréyòl Gwiyanè Logo" className="h-10 w-10" />
+        <img src="logo.png" alt="Kréyòl Gwiyanè Logo" className="h-10 w-10" />
         <h1 className="text-xl font-bold font-serif text-zinc-100">Kréyòl Gwiyanè</h1>
       </div>
       <nav className="flex flex-col space-y-2">
